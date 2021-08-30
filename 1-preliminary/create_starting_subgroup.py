@@ -37,6 +37,15 @@ if PLUGIN_NAME == 'quantum_espresso':
     query.append(orm.Node, project="attributes.element", tag='pseudo')
     query.append(orm.Group, filters={'label': 'SSSP/1.1/PBE/precision'}, with_node='pseudo')
     valid_elements = query.all(flat=True)
+elif PLUGIN_NAME == 'kkr':
+    #valid_elements =  ['X', 'Ag', 'Al', 'As', 'Au', 'B', 'Ba', 'Be', 'C', 'Ca', 'Cd',
+    #                   'Cl', 'Co', 'Cr', 'Cs', 'Cu', 'Eu', 'F', 'Fe', 'Ga', 'Gd', 'Ge',
+    #                   'H', 'Hf', 'Hg', 'In', 'Ir', 'K', 'La', 'Li', 'Mg', 'Mn', 'Mo',
+    #                   'N', 'Na', 'Nb', 'Ni', 'O', 'Os', 'P', 'Pb', 'Pd',  'Pt', 'Rb',
+    #                   'Re', 'Rh', 'Ru', 'S', 'Sb', 'Sc', 'Se', 'Si', 'Sn', 'Sr', 'Ta',
+    #                   'Tc', 'Te', 'Ti', 'Tl', 'V', 'Va', 'W', 'Y', 'Zn', 'Zr']
+    # start with minimal required set
+    valid_elements =  ['Si', 'Al', 'Fe', 'Eu', 'O']
 #elif PLUGIN_NAME == 'xxx':
 #    yyy
 else:
